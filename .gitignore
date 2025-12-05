@@ -1,0 +1,13 @@
+venv/
+.venv/
+env/
+.env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# Large/Generated files
+*.pdf
+outputs/
+figures/
