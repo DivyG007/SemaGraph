@@ -10,3 +10,5 @@ amrlib==0.7.1
 penman==1.2.2
 smatch==1.0.4
 unidecode==1.4.0
+matplotlib==3.9.2
+gensim==4.3.2
