@@ -6,7 +6,7 @@ SemaGraph benchmarks multiple sentence-similarity signals on the official Semant
 
 ---
 
-## 🌟 Highlights
+## Highlights
 
 | Capability | Details |
 | --- | --- |
@@ -18,7 +18,7 @@ SemaGraph benchmarks multiple sentence-similarity signals on the official Semant
 
 ---
 
-## 📁 Repository structure
+## Repository structure
 
 | Path | Description |
 | --- | --- |
@@ -33,7 +33,7 @@ SemaGraph benchmarks multiple sentence-similarity signals on the official Semant
 
 ---
 
-## ⚙️ Setup
+## Setup
 
 1. **Create a virtual environment**
 	```bash
@@ -52,11 +52,11 @@ SemaGraph benchmarks multiple sentence-similarity signals on the official Semant
 4. **AMR parser weights** are downloaded on demand by `amrlib`. Expect the first run to pull ~500 MB into your cache (~1 GB when including alignment models).
 5. **Word embeddings** (default `glove-wiki-gigaword-100`) are auto-downloaded by `gensim.downloader` on first use.
 
-> 📝 Tip: Keep `PYTHONPATH` clean when using Hugging Face `datasets`; the script downloads STS-B automatically and caches it under `~/.cache/huggingface/`.
+> Tip: Keep `PYTHONPATH` clean when using Hugging Face `datasets`; the script downloads STS-B automatically and caches it under `~/.cache/huggingface/`.
 
 ---
 
-## 🚀 Running the unified experiment
+## Running the unified experiment
 
 ```bash
 python experiment.py \
@@ -114,7 +114,7 @@ Key CLI flags (see `parse_args()` for the full list):
 
 ---
 
-## 📊 Generating the correlation figures
+## Generating the correlation figures
 
 Once you have a `pairs` JSONL file:
 
@@ -133,7 +133,7 @@ This script:
 
 ---
 
-## 🔬 How the pipeline works (experiment.py)
+## How the pipeline works (experiment.py)
 
 1. **Data ingestion** – Hugging Face `datasets` loads the requested split and converts it to Pandas for easier manipulation.
 2. **Sampling** – `sample_split` optionally downsamples the pairs while preserving reproducibility.
@@ -152,7 +152,7 @@ This script:
 
 ---
 
-## 🧪 Reproducing the LaTeX report
+## Reproducing the LaTeX report
 
 The published `report.pdf` in this repo already reflects a 200-pair validation experiment. To re-run and refresh the numbers/figures:
 
@@ -166,7 +166,7 @@ The published `report.pdf` in this repo already reflects a 200-pair validation e
 
 ---
 
-## 🧰 Troubleshooting & tips
+## Troubleshooting & tips
 
 - **AMR parsing is slow** – reduce `--sample-size` or `--amr-batch-size`; AMR is the dominant cost.
 - **Graph Edit distance fails/timeouts** – increase `--ged-timeout` or skip GED by ignoring that metric when post-processing.
@@ -177,10 +177,10 @@ The published `report.pdf` in this repo already reflects a 200-pair validation e
 
 ---
 
-## 🤝 Contributing / extending
+## Contributing / extending
 
 1. Fork the repo, create a new branch, and keep heavy artifacts out of Git (use `.gitignore` as a guide).
 2. For new metrics, plug into the scoring loop inside `evaluate()` and append to the `metrics` list for evaluation.
 3. Update this README and `report.tex` if you change the experimental design.
 
-Happy graphing! 🎯
+Happy graphing!
